@@ -1,0 +1,70 @@
+﻿원래 표기,표준 코드,판단 근거(어느 단어로),확신(높음/낮음)
+10% T/T advance + 90% O/A 90 days,검토 필요,'10% advance + 90% O/A' — 선수 비율이 30/70이 아니라 7종 어디에도 맞지 않음,낮음
+100% T/T before shipment,TT_ADV,'BEFORE SHIPMENT' (선적 전 송금),높음
+30 DAYS OPEN ACCOUNT,OA,'OPEN ACCOUNT' (Open Account) + 30일,높음
+"30% T/T advance, 70% within 30 days after B/L",TT_SPLIT_30_70,'30% T/T advance' + '70% within 30 days after B/L',높음
+60 days O/A ,OA,'O/A' (Open Account) + 60일 [앞뒤 공백 있음],높음
+Confirmed L/C at sight,LC_SIGHT,'L/C' + 'at sight',높음
+D/A 60,DA,'D/A' + 60일,높음
+D/A 60 days,DA,'D/A' + 60일,높음
+D/A 60 days ,DA,'D/A' + 60일 [앞뒤 공백 있음],높음
+D/A 60 DAYS AFTER B/L,DA,'D/A' + 60일,높음
+  D/A 90,DA,'D/A' + 90일 [앞뒤 공백 있음],높음
+D/A 90,DA,'D/A' + 90일,높음
+d/a 90,DA,'D/A' + 90일 [소문자],높음
+D/A 90 days,DA,'D/A' + 90일,높음
+D/P,DP,'D/P' (Documents against Payment),높음
+D/P at sight,DP,'D/P' (Documents against Payment) + 'sight',높음
+d/p at sight,DP,'D/P' (Documents against Payment) + 'sight' [소문자],높음
+DA60,DA,'D/A' + 60일,높음
+DA90,DA,'D/A' + 90일,높음
+Documents against acceptance 60 days,DA,'Documents against acceptance' + 60일,높음
+DP sight,DP,'D/P' (Documents against Payment) + 'sight',높음
+Irrevocable L/C at sight,LC_SIGHT,'L/C' + 'at sight',높음
+irrevocable l/c at sight,LC_SIGHT,'L/C' + 'at sight' [소문자],높음
+L/C 60 days,LC_USANCE,'L/C' + '60 days' (기한 있는 신용장 = 기한부),높음
+L/C 90 days,LC_USANCE,'L/C' + '90 days' (기한 있는 신용장 = 기한부),높음
+L/C at sight ,LC_SIGHT,'L/C' + 'at sight' [앞뒤 공백 있음],높음
+LC AT SIGHT,LC_SIGHT,'L/C' + 'at sight',높음
+LC at sight,LC_SIGHT,'L/C' + 'at sight',높음
+LC at sight ,LC_SIGHT,'L/C' + 'at sight' [앞뒤 공백 있음],높음
+  Net 30 days after receipt of invoice,OA,'Net 30' (외상 기간 조건) [앞뒤 공백 있음],높음
+Net 30 days after receipt of invoice,OA,'Net 30' (외상 기간 조건),높음
+Net 60,OA,'Net 60' (외상 기간 조건),높음
+Net 90,OA,'Net 90' (외상 기간 조건),높음
+Net 90 ,OA,'Net 90' (외상 기간 조건) [앞뒤 공백 있음],높음
+O/A 30,OA,'O/A' (Open Account) + 30일,높음
+  O/A 60,OA,'O/A' (Open Account) + 60일 [앞뒤 공백 있음],높음
+O/A 60,OA,'O/A' (Open Account) + 60일,높음
+O/A 90,OA,'O/A' (Open Account) + 90일,높음
+O/A 90 ,OA,'O/A' (Open Account) + 90일 [앞뒤 공백 있음],높음
+o/a 90,OA,'O/A' (Open Account) + 90일 [소문자],높음
+O/A30,OA,'O/A' (Open Account) + 30일,높음
+O/A60,OA,'O/A' (Open Account) + 60일,높음
+OA 30 days,OA,'OA' (Open Account) + 30일,높음
+OA 60 DAYS,OA,'OA' (Open Account) + 60일,높음
+OA 60 days,OA,'OA' (Open Account) + 60일,높음
+OA 90 days,OA,'OA' (Open Account) + 90일,높음
+  OA90,OA,'OA' (Open Account) + 90일 [앞뒤 공백 있음],높음
+OA90,OA,'OA' (Open Account) + 90일,높음
+Open account 60 days,OA,'OPEN ACCOUNT' (Open Account) + 60일,높음
+OPEN ACCT 90D,OA,'OPEN ACCT' (Open Account) + 90일,높음
+open acct 90d,OA,'OPEN ACCT' (Open Account) + 90일 [소문자],높음
+T/T 30 days after B/L,OA,'T/T' + '30 days after B/L' (선적 후 송금),높음
+T/T 30/70,TT_SPLIT_30_70,'T/T' + '30/70' 비율 — 잔금 시점은 표기에 없음,높음
+T/T 30:70,TT_SPLIT_30_70,'T/T' + '30/70' 비율 — 잔금 시점은 표기에 없음,높음
+T/T 60 DAYS AFTER B/L,OA,'T/T' + '60 days after B/L' (선적 후 송금),높음
+T/T 60 days after B/L,OA,'T/T' + '60 days after B/L' (선적 후 송금),높음
+t/t 60 days after b/l,OA,'T/T' + '60 days after B/L' (선적 후 송금) [소문자],높음
+T/T 60DAYS,OA,'T/T' + '60days' — 'after'가 없어 기산점 불명. 기간이 있어 사후송금으로 봄,낮음
+T/T 60days,OA,'T/T' + '60days' — 'after'가 없어 기산점 불명. 기간이 있어 사후송금으로 봄,낮음
+  T/T 90 days after B/L,OA,'T/T' + '90 days after B/L' (선적 후 송금) [앞뒤 공백 있음],높음
+T/T 90 DAYS AFTER B/L,OA,'T/T' + '90 days after B/L' (선적 후 송금),높음
+T/T 90 days after B/L,OA,'T/T' + '90 days after B/L' (선적 후 송금),높음
+t/t 90 days after b/l,OA,'T/T' + '90 days after B/L' (선적 후 송금) [소문자],높음
+T/T in advance,TT_ADV,'IN ADVANCE' (선적 전 송금),높음
+TT,TT_ADV,담당자한테 물어봄 (사람 판단),높음
+tt,검토 필요,'T/T'(송금)만 있고 시점(선적 전/후) 단어 없음 [소문자],낮음
+Usance L/C 90 days,LC_USANCE,'L/C' + 'usance' + 90일,높음
+usance l/c 90 days,LC_USANCE,'L/C' + 'usance' + 90일 [소문자],높음
+신용장 일람불,LC_SIGHT,'신용장' + '일람불',높음
