@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>한빛식당 밥 예보</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f5f7;--card:#ffffff;--ink:#1d2330;--sub:#5b6472;--line:#e3e6eb;--accent:#1f5fbf;--warn:#c2410c;--gray:#8a919c}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:'Noto Sans KR',sans-serif;font-size:16px;line-height:1.6;word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:1040px;margin:0 auto;padding:24px 16px 48px}
+.head{padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+h1{font-size:30px;line-height:1.3;margin:0 0 6px;font-weight:700}
+.lede{margin:0;color:var(--sub);font-size:15px}
+h2{font-size:22px;margin:0 0 8px}
+.section-lede{margin:0 0 6px;color:var(--sub);font-size:15px}
+.tally{margin:0 0 16px;font-weight:700;font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;min-width:0}
+.card-extra{border-style:dashed}
+.card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.no{font-size:14px;color:var(--sub);font-weight:700}
+.badge{color:#fff;font-size:14px;font-weight:700;padding:2px 12px;border-radius:999px}
+.badge-outline{background:transparent;color:var(--ink);border:1px solid var(--gray)}
+h3{font-size:18px;margin:0 0 4px;line-height:1.4}
+.quote{margin:0 0 12px;color:var(--sub);font-size:14px}
+.nums{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.num{background:var(--bg);border-radius:8px;padding:8px 10px;display:flex;flex-direction:column;min-width:0}
+.num-label{font-size:14px;color:var(--sub)}
+.num-value{font-size:24px;font-weight:700;line-height:1.3;font-variant-numeric:tabular-nums}
+.num-value small{font-size:14px;font-weight:400;margin-left:2px}
+.num-days{font-size:14px;color:var(--sub)}
+.diff{margin:0;font-size:14px}
+.note{margin:2px 0 0;font-size:14px;color:var(--sub)}
+.chart{position:relative;margin-top:10px;width:100%}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="head">
+  <h1>한빛식당 밥 예보</h1>
+  <p class="lede">(가상) 한빛정밀(주) 본사 구내식당 · 기록 기간 2025-10-01 ~ 2026-10-15 · 만든 사람 총무팀 최 대리(가상)</p>
+</header>
+
+<section class="section" id="beliefs">
+  <h2>영양사님 감 검증</h2>
+  <p class="section-lede">영양사님의 믿음 다섯 가지를 지난 기록으로 견주어 봤어요.
+    출근 인원이 다른 날도 견줄 수 있게 <b>출근 100명당 식수</b>(식수 ÷ 출근예정 × 100)로 비교했고,
+    행사가 없고 월급날이 아닌 날만 썼어요. 100명당 2명 이상 차이 나면 '차이 있음'으로 봤어요.</p>
+  <p class="tally">맞음 2 · 반만 1 · 틀림 2</p>
+  <div class="grid">
+  <article class="card">
+    <div class="card-top">
+      <span class="no">믿음 1</span>
+      <span class="badge" style="background:#1f5fbf">맞음</span>
+    </div>
+    <h3>비 오는 날엔 다들 구내식당으로 와요.</h3>
+    <p class="quote">우산 쓰고 나가기 귀찮거든요.</p>
+    <div class="nums"><div class="num"><span class="num-label">비 오는 날</span><span class="num-value">73.4<small>명</small></span><span class="num-days">50일</span></div><div class="num"><span class="num-label">맑은 날</span><span class="num-value">65.3<small>명</small></span><span class="num-days">94일</span></div></div>
+    <p class="diff">출근 100명당 차이: 비 오는 날 − 맑은 날 = +8.1명</p>
+    
+    <div class="chart" style="height:96px"><canvas id="b0" aria-label="믿음 1 막대 그래프"></canvas></div>
+  </article>
+  <article class="card">
+    <div class="card-top">
+      <span class="no">믿음 2</span>
+      <span class="badge" style="background:#1f5fbf">맞음</span>
+    </div>
+    <h3>금요일 점심은 썰렁해요.</h3>
+    <p class="quote">다들 밖에서 맛있는 거 먹고 싶어 하죠.</p>
+    <div class="nums"><div class="num"><span class="num-label">금요일</span><span class="num-value">60.0<small>명</small></span><span class="num-days">38일</span></div><div class="num"><span class="num-label">월–목</span><span class="num-value">69.6<small>명</small></span><span class="num-days">167일</span></div></div>
+    <p class="diff">출근 100명당 차이: 금요일 − 월–목 = -9.6명</p>
+    
+    <div class="chart" style="height:96px"><canvas id="b1" aria-label="믿음 2 막대 그래프"></canvas></div>
+  </article>
+  <article class="card">
+    <div class="card-top">
+      <span class="no">믿음 3</span>
+      <span class="badge" style="background:#8a919c">반만</span>
+    </div>
+    <h3>돈가스 데이가 최고 인기예요.</h3>
+    <p class="quote">돈가스 나오는 날은 무조건 넉넉히!</p>
+    <div class="nums"><div class="num"><span class="num-label">돈가스</span><span class="num-value">72.1<small>명</small></span><span class="num-days">19일</span></div><div class="num"><span class="num-label">카레</span><span class="num-value">72.3<small>명</small></span><span class="num-days">21일</span></div></div>
+    <p class="diff">출근 100명당 차이: 돈가스 − 카레 = -0.2명</p>
+    <p class="note">돈가스는 10개 메뉴 중 2등</p>
+    <div class="chart" style="height:254px"><canvas id="b2" aria-label="믿음 3 막대 그래프"></canvas></div>
+  </article>
+  <article class="card">
+    <div class="card-top">
+      <span class="no">믿음 4</span>
+      <span class="badge" style="background:#c2410c">틀림</span>
+    </div>
+    <h3>여름에 더우면 덜 와요.</h3>
+    <p class="quote">다들 시원한 냉면집으로 가는 것 같아요.</p>
+    <div class="nums"><div class="num"><span class="num-label">31도 이상</span><span class="num-value">72.8<small>명</small></span><span class="num-days">20일</span></div><div class="num"><span class="num-label">25도 이상 31도 미만</span><span class="num-value">70.1<small>명</small></span><span class="num-days">44일</span></div></div>
+    <p class="diff">출근 100명당 차이: 31도 이상 − 25도 이상 31도 미만 = +2.8명</p>
+    <p class="note">31도 이상인 날 20일</p>
+    <div class="chart" style="height:96px"><canvas id="b3" aria-label="믿음 4 막대 그래프"></canvas></div>
+  </article>
+  <article class="card">
+    <div class="card-top">
+      <span class="no">믿음 5</span>
+      <span class="badge" style="background:#c2410c">틀림</span>
+    </div>
+    <h3>월요일엔 입맛이 없어서 적게 와요.</h3>
+    <p class="quote">주말 지나고 다들 기운이 없잖아요.</p>
+    <div class="nums"><div class="num"><span class="num-label">월요일</span><span class="num-value">71.7<small>명</small></span><span class="num-days">41일</span></div><div class="num"><span class="num-label">화–목</span><span class="num-value">68.9<small>명</small></span><span class="num-days">126일</span></div></div>
+    <p class="diff">출근 100명당 차이: 월요일 − 화–목 = +2.8명</p>
+    
+    <div class="chart" style="height:96px"><canvas id="b4" aria-label="믿음 5 막대 그래프"></canvas></div>
+  </article>
+  <article class="card card-extra">
+    <div class="card-top">
+      <span class="no">메모에 없던 규칙</span>
+      <span class="badge badge-outline">차이 있음</span>
+    </div>
+    <h3>월급날엔 더 올까, 덜 올까?</h3>
+    <p class="quote">영양사님 메모에는 없던 규칙입니다. 9/23 사건 메모에 &#x27;월급날이기도 했고요&#x27;라는 말만 있었어요.</p>
+    <div class="nums"><div class="num"><span class="num-label">월급날</span><span class="num-value">56.4<small>명</small></span><span class="num-days">12일</span></div><div class="num"><span class="num-label">보통 날</span><span class="num-value">67.8<small>명</small></span><span class="num-days">205일</span></div></div>
+    <p class="diff">출근 100명당 차이: 월급날 − 보통 날 = -11.5명</p>
+    <p class="note">월급날은 행사가 있는 날도 모두 넣었어요</p>
+    <div class="chart" style="height:96px"><canvas id="bp" aria-label="월급날 막대 그래프"></canvas></div>
+  </article>
+  </div>
+</section>
+</div>
+<script id="page-data" type="application/json">{
+ "beliefs": [
+  {
+   "no": 1,
+   "head": "비 오는 날엔 다들 구내식당으로 와요.",
+   "tail": "우산 쓰고 나가기 귀찮거든요.",
+   "kind": "pair",
+   "groups": [
+    {
+     "label": "비 오는 날",
+     "value": 73.4,
+     "days": 50
+    },
+    {
+     "label": "맑은 날",
+     "value": 65.3,
+     "days": 94
+    }
+   ],
+   "diff": 8.1,
+   "verdict": "맞음",
+   "note": ""
+  },
+  {
+   "no": 2,
+   "head": "금요일 점심은 썰렁해요.",
+   "tail": "다들 밖에서 맛있는 거 먹고 싶어 하죠.",
+   "kind": "pair",
+   "groups": [
+    {
+     "label": "금요일",
+     "value": 60.0,
+     "days": 38
+    },
+    {
+     "label": "월–목",
+     "value": 69.6,
+     "days": 167
+    }
+   ],
+   "diff": -9.6,
+   "verdict": "맞음",
+   "note": ""
+  },
+  {
+   "no": 3,
+   "head": "돈가스 데이가 최고 인기예요.",
+   "tail": "돈가스 나오는 날은 무조건 넉넉히!",
+   "kind": "menu",
+   "groups": [
+    {
+     "label": "돈가스",
+     "value": 72.1,
+     "days": 19
+    },
+    {
+     "label": "카레",
+     "value": 72.3,
+     "days": 21
+    }
+   ],
+   "ranking": [
+    {
+     "label": "카레",
+     "value": 72.3,
+     "days": 21
+    },
+    {
+     "label": "돈가스",
+     "value": 72.1,
+     "days": 19
+    },
+    {
+     "label": "치킨마요",
+     "value": 71.1,
+     "days": 23
+    },
+    {
+     "label": "제육볶음",
+     "value": 69.6,
+     "days": 18
+    },
+    {
+     "label": "김치찌개",
+     "value": 68.7,
+     "days": 24
+    },
+    {
+     "label": "비빔밥",
+     "value": 67.7,
+     "days": 21
+    },
+    {
+     "label": "짜장",
+     "value": 67.4,
+     "days": 26
+    },
+    {
+     "label": "국수",
+     "value": 66.1,
+     "days": 24
+    },
+    {
+     "label": "생선구이",
+     "value": 63.3,
+     "days": 15
+    },
+    {
+     "label": "샐러드",
+     "value": 55.0,
+     "days": 14
+    }
+   ],
+   "rank": 2,
+   "verdict": "반만",
+   "diff": -0.2,
+   "note": "돈가스는 10개 메뉴 중 2등"
+  },
+  {
+   "no": 4,
+   "head": "여름에 더우면 덜 와요.",
+   "tail": "다들 시원한 냉면집으로 가는 것 같아요.",
+   "kind": "pair",
+   "groups": [
+    {
+     "label": "31도 이상",
+     "value": 72.8,
+     "days": 20
+    },
+    {
+     "label": "25도 이상 31도 미만",
+     "value": 70.1,
+     "days": 44
+    }
+   ],
+   "diff": 2.8,
+   "verdict": "틀림",
+   "note": "31도 이상인 날 20일"
+  },
+  {
+   "no": 5,
+   "head": "월요일엔 입맛이 없어서 적게 와요.",
+   "tail": "주말 지나고 다들 기운이 없잖아요.",
+   "kind": "pair",
+   "groups": [
+    {
+     "label": "월요일",
+     "value": 71.7,
+     "days": 41
+    },
+    {
+     "label": "화–목",
+     "value": 68.9,
+     "days": 126
+    }
+   ],
+   "diff": 2.8,
+   "verdict": "틀림",
+   "note": ""
+  }
+ ],
+ "payday": {
+  "kind": "extra",
+  "head": "월급날엔 더 올까, 덜 올까?",
+  "tail": "영양사님 메모에는 없던 규칙입니다. 9/23 사건 메모에 '월급날이기도 했고요'라는 말만 있었어요.",
+  "groups": [
+   {
+    "label": "월급날",
+    "value": 56.4,
+    "days": 12
+   },
+   {
+    "label": "보통 날",
+    "value": 67.8,
+    "days": 205
+   }
+  ],
+  "diff": -11.5,
+  "verdict": "차이 있음",
+  "note": "월급날은 행사가 있는 날도 모두 넣었어요"
+ },
+ "colors": {
+  "accent": "#1f5fbf",
+  "warn": "#c2410c",
+  "gray": "#8a919c"
+ }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+const D = JSON.parse(document.getElementById('page-data').textContent);
+const C = D.colors;
+Chart.defaults.font.family = "'Noto Sans KR', sans-serif";
+Chart.defaults.font.size = 14;
+function bars(id, labels, values, colors) {
+  new Chart(document.getElementById(id), {
+    type: 'bar',
+    data: {labels: labels, datasets: [{data: values, backgroundColor: colors, borderRadius: 4, barThickness: 16}]},
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false, animation: false,
+      plugins: {legend: {display: false},
+        tooltip: {callbacks: {label: (c) => '100명당 ' + c.parsed.x.toFixed(1) + '명'}}},
+      scales: {x: {beginAtZero: false, grid: {color: '#eceef1'}, ticks: {callback: (v) => v + '명'}},
+               y: {grid: {display: false}}}
+    }
+  });
+}
+D.beliefs.forEach((b, i) => {
+  if (b.kind === 'menu') {
+    bars('b' + i, b.ranking.map(r => r.label), b.ranking.map(r => r.value),
+         b.ranking.map(r => r.label === '돈가스' ? C.accent : '#c9ced6'));
+  } else {
+    bars('b' + i, b.groups.map(g => g.label), b.groups.map(g => g.value), [C.accent, '#c9ced6']);
+  }
+});
+bars('bp', D.payday.groups.map(g => g.label), D.payday.groups.map(g => g.value), [C.accent, '#c9ced6']);
+</script>
+</body>
+</html>
